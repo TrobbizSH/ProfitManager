@@ -1,0 +1,33 @@
+﻿<Window x:Class="ProfitManager.Settings_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProfitManager"
+        mc:Ignorable="d"
+        Title="Settings" Height="370" Width="410" Topmost="True" ResizeMode="NoResize">
+
+    <!-- Grid for the settings-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Input for a file-->
+        <StackPanel Grid.Row="0">
+            <Label Margin="5,0,0,0">The path to the file where your transactions will be saved:</Label>
+            <StackPanel Orientation="Horizontal" Height="25">
+                <TextBox IsEnabled="False" Width="310" Margin="10,0,0,0" x:Name="txtbox_path"></TextBox>
+                <Button x:Name="btn_path" Height="25" VerticalAlignment="Bottom" Click="btn_path_Click">Choose File</Button>
+            </StackPanel>
+        </StackPanel>
+
+        <!--Buttons to either save your changes or cancel them-->
+        <DockPanel Grid.Row="2" Margin="50,10,50,4.541" LastChildFill="False">
+            <Button Padding="40,0" Margin="5,0" DockPanel.Dock="Left" FontSize="20" Name="btn_Save" Click="btn_Save_Click">Save</Button>
+            <Button Padding="40,0" Margin="5,0" DockPanel.Dock="Right" FontSize="20" Name="btn_Cancel" Click="btn_Cancel_Click">Cancel</Button>
+        </DockPanel>
+    </Grid>
+</Window>
